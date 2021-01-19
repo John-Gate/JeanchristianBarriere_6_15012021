@@ -1,6 +1,6 @@
 Pour l'installation:
 git clone https://github.com/a-grasso-dev/projet_6.git
-npm i
+puis commande npm i
 
 
 
