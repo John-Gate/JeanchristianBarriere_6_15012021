@@ -10,6 +10,6 @@ Pour le frontend, commande:
   "ng serve". 
  puis se rendre sur:  http://localhost:4200/
 
-Pour le frontend, commande:
+Pour le backend, commande:
   "nodemon server". 
  puis se rendre sur:  http://localhost:3000/
