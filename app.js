@@ -1,19 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
-const stuffRoutes = require('./routes/stuff');
+const path = require('path');
+const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
-const app = express();
 
 
-mongoose.connect('mongodb+srv://SaucePekocko:XR3YKwxoKuz4qpUh@cluster0.opz5w.mongodb.net/projet6?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://testtest:JyhDOgk5ehspSz9s@cluster0.opz5w.mongodb.net/hotsauce?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
-
+const app = express();
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -22,7 +21,9 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.json());
 
-app.use('/api/sauces', stuffRoutes); //importes toutes les routes
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+app.use('/api/sauces', sauceRoutes); //importes toutes les routes
 app.use('/api/auth', userRoutes); //racine de tout ce qui est lie a l authentif
 
 module.exports = app;
