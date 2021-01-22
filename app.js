@@ -9,7 +9,7 @@ const userRoutes = require('./routes/user');//accede aux users
 
 
 
-mongoose.connect('mongodb+srv://testtest:JyhDOgk5ehspSz9s@cluster0.opz5w.mongodb.net/hotsauce?retryWrites=true&w=majority',
+mongoose.connect('',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
-app.use(helmet()); // protection contre injection sql et xms
+app.use(helmet()); // protection contre injection sql et xss
 app.use(mongoSanitize());    // Protection contre les injections dans Mongo Db
 app.use('/images', express.static(path.join(__dirname, 'images')));//indique a express qu il faut gerer la ressource de maniere statiqueun sous-répertoire de notre répertoire de base, __dirname ) à chaque fois qu'elle reçoit une requête vers la route /images
 app.use('/api/sauces', sauceRoutes); //importes toutes les routes pour toutes demande effectues, evite repetition 
