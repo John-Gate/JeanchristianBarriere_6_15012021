@@ -2,9 +2,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-//fct signup qui va cryupter mdp, va cree un nouveau ux avec ce mdp et l email, et enregistre ux
+//fct signup qui va crypter password, va cree un nouveau user avec ce password et l email, et l'enregistre
 exports.signup = (req, res, next) => {
-  bcrypt.hash(req.body.password, 10)
+  bcrypt.hash(req.body.password, 10) //function hashage de bcrypt, on sale 10 fois le password
     .then(hash => {
       const user = new User({
         email: req.body.email,
@@ -18,24 +18,23 @@ exports.signup = (req, res, next) => {
 };
 
 
-//permet aux ux de se connecter a l app, on reccup l ux de la base === email, si pas bon on renvoit erreur, on compare mdp avec l ehash si comparaison pas bonne on renvoit erreur, si ok on renvoituser id et token
 exports.login = (req, res, next) => {
-  User.findOne({ email: req.body.email })
+  User.findOne({ email: req.body.email })//Verifie si email est ds la bdd
     .then(user => {
       if (!user) {
         return res.status(401).json({ error: 'Utilisateur non trouvé !' });
       }
-      bcrypt.compare(req.body.password, user.password)
+      bcrypt.compare(req.body.password, user.password)//compare password user et bdd et renvoit id token si ok
         .then(valid => {
           if (!valid) {
             return res.status(401).json({ error: 'Mot de passe incorrect !' });
           }
           res.status(200).json({
             userId: user._id,
-            token: jwt.sign(
+            token: jwt.sign(//fct de jasonwebtoken: pour encoder un nouveau token
               { userId: user._id },
-              'RANDOM_TOKEN_SECRET',
-              { expiresIn: '24h' }
+              'RANDOM_TOKEN_SECRET',//chaîne secrète de développement temporaire pour encoder notre token (à remplacer par une chaîne aléatoire beaucoup plus longue pour la production)
+              { expiresIn: '24h' }//duree de validite
             )
           });
         })

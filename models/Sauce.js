@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 
-
-
+//Schema de donnees avec champs souhaites pour chaque sauce
+//methode schema genere par mongoose
 const sauceSchema = mongoose.Schema({
   //id: ObjectID — identifiant unique créé par MongoDB ;
   userId: { type: String, required: true },// identifiant unique MongoDB pour l'utilisateur qui a créé la sauce object Id qui etait ds la tab user
