@@ -9,7 +9,7 @@ const sauceRoutes = require('./routes/sauce'); //router
 const userRoutes = require('./routes/user');//accede aux users
 const toobusy = require('toobusy-js');
 
-mongoose.connect('mongodb+srv://testtest:JyhDOgk5ehspSz9s@cluster0.opz5w.mongodb.net/hotsauce?retryWrites=true&w=majority',
+mongoose.connect('',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
