@@ -3,7 +3,9 @@ const multer = require('multer');
 const MIME_TYPES = {
   'image/jpg': 'jpg',
   'image/jpeg': 'jpg',
-  'image/png': 'png'
+  'image/png': 'png',
+  "image/webp": "webp",
+  "image/gif": "gif"
 };
 //indique a multer ou enregistrer les images et comment les nommer:(remplace " " par _ et ajoute un timestamp dinon probleme niveau server)
 //si on utilisait le nom d origine, probleme qwuand 2 fichiers on le meme nom
