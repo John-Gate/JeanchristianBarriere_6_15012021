@@ -13,3 +13,8 @@ Pour le frontend, commande:
 Pour le backend, commande:
   "nodemon server". 
  puis se rendre sur:  http://localhost:3000/
+
+ uri pour se connecter:
+ dans app.js => rajouter  
+ 'mongodb+srv://testtest:JyhDOgk5ehspSz9s@cluster0.opz5w.mongodb.net/hotsauce?retryWrites=true&w=majority'
+ dans mongoose.connect
