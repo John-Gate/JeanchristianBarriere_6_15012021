@@ -16,5 +16,5 @@ Pour le backend, commande:
 
  uri pour se connecter:
  dans app.js => rajouter  
- 'mongodb+srv://testtest:JyhDOgk5ehspSz9s@cluster0.opz5w.mongodb.net/hotsauce?retryWrites=true&w=majority'
+ 'mongodb+srv://{username}:{password}@cluster0.opz5w.mongodb.net/hotsauce?retryWrites=true&w=majority'
  dans mongoose.connect
