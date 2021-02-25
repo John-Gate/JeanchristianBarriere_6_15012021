@@ -16,7 +16,9 @@ Création d’une api sécurisée avec JS :
 ### So Pekocko
 
 ![Image text](https://github.com/John-Gate/jeanchristianbarriere_6_15012021/blob/main/t%C3%A9l%C3%A9chargement.jpg)
->Créer un premier MVP pour démontrer le fonctionnement de ses applications(Selection de produit, Panier fonctionel, Commander).  
+>Développer une application d’évaluation des piquantes So Pekocko
+>.
+>.  
 
 ## Installation
   
@@ -37,7 +39,7 @@ puis se rendre sur:  `http://localhost:3000/`
  rajouter : `'mongodb+srv://{username}:{password}@cluster0.opz5w.mongodb.net/hotsauce?retryWrites=true&w=majority'`.
  
 ## Éléments fournis
-Backend (_Fournit lors de l'installation_)
+Frontend (_Fournit lors de l'installation_)
 
 ##  Cahier des charges
 _Pour le MVP, la personnalisation du produit ne sera pas fonctionnelle :_  
